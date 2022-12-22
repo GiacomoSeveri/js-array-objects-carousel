@@ -1,9 +1,23 @@
+const data = ['img/01.webp','img/02.webp','img/03.webp','img/04.webp','img/05.webp',]
+
+
 // ! recupero gli elemnti 
 // bottoni
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 // immagini
+const gallery = document.querySelector('.gallery')
+
+// ! creo un ciclo per stampare le foto
+for(let i = 0; i < data.length; i++){
+    const imgElement = document.createElement('img');
+    imgElement.src = data[i];
+    imgElement.alt = 'videogioco' + i;
+    gallery.appendChild('imgElement');
+}
+
 const src = document.querySelectorAll('.gallery img');
+
 
 // ! aggiungo la classe active alla prima immagine 
 let currentIndex = 0;
