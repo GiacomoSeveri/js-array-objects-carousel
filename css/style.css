@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #D48EBE;
+}
+
 .conatiner{
     max-width: 1200px;
     margin: 0 auto;
@@ -25,6 +29,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    cursor: pointer;
     display: none;
 }
 
@@ -38,6 +43,7 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    color: #fff;
 }
 
 .fa-solid:hover {
@@ -52,7 +58,7 @@
     left: 105%;
 }
 
-#tumb{
+#thumb{
     width: 800px;
     height: 100px;
     margin: 0 auto;
@@ -61,10 +67,17 @@
     align-items: center;
 }
 
-#tumb img{
+#thumb img{
     width: 19%;
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer;
+    transition: filter 0.5s;
+    filter: grayscale(1);
+}
+
+#thumb img.active{
+    filter: grayscale(0);
+    box-shadow: 0 0 20px #FFFFFF;
 }

@@ -5,28 +5,33 @@ const data = ['img/01.webp','img/02.webp','img/03.webp','img/04.webp','img/05.we
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 // immagini
-const gallery = document.querySelector('.gallery')
+const gallery = document.querySelector('#carousel .gallery')
+const tumbGallery = document.getElementById('thumb')
 
 // ! creo un ciclo per stampare le foto
 let banner = '';
 for(let i = 0; i < data.length; i++){
-    const imgElement = document.createElement('img');     
-    imgElement.src = data[i]       
-    gallery.appendChild(imgElement)
+    banner += `<img src="${data[i]}" alt="${data[i]}">`;
 }
 
+gallery.innerHTML = banner;
+tumbGallery.innerHTML = banner;
+
 const src = document.querySelectorAll('.gallery img');
+const thumbSrc = document.querySelectorAll('#thumb img');
 
 
 // ! aggiungo la classe active alla prima immagine 
 let currentIndex = 0;
 src[currentIndex].classList.add('active');
+thumbSrc[currentIndex].classList.add('active');
 
 // ! funzionamento scorri foto
 // aggiungo l'evento al bottone next
 next.addEventListener('click', function(){
    // rimuovo la classe active
    src[currentIndex].classList.remove('active');
+   thumbSrc[currentIndex].classList.remove('active');
    
    // incremento l'indice
     currentIndex++;
@@ -38,12 +43,14 @@ next.addEventListener('click', function(){
 
     // aggiungo una nuova classe active
     src[currentIndex].classList.add('active');
+    thumbSrc[currentIndex].classList.add('active');
 })
 
 // aggiungo l'evento al bottone prev
 prev.addEventListener('click', function(){
     // rimuovo la classe active
     src[currentIndex].classList.remove('active');
+    thumbSrc[currentIndex].classList.remove('active');
     
     // decremento l'indice
      currentIndex--;
@@ -55,4 +62,5 @@ prev.addEventListener('click', function(){
  
      // aggiungo una nuova classe active
      src[currentIndex].classList.add('active');
- })
+     thumbSrc[currentIndex].classList.add('active');
+})
