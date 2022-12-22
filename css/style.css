@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conatiner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#carousel{
+    height: 400px;
+    width: 700px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.gallery{
+    height: 100%;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: none;
+}
+
+.gallery img.active {
+    display: block;
+}
+
+.fa-solid{
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.fa-solid:hover {
+    color: #7DBEED;
+}
+
+.fa-arrow-left{
+    right: 105%;
+}
+
+.fa-arrow-right{
+    left: 105%;
+}
