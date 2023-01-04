@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #D48EBE;
+    background-color: #95C8DC;
 }
 
 .conatiner{
@@ -16,7 +16,7 @@ body{
 #carousel{
     height: 400px;
     width: 700px;
-    margin: 100px auto;
+    margin: 50px auto;
     position: relative;
 }
 
@@ -47,7 +47,7 @@ body{
 }
 
 .fa-solid:hover {
-    color: #7DBEED;
+    color: #F9EE5C;
 }
 
 .fa-arrow-left{
@@ -79,5 +79,5 @@ body{
 
 #thumb img.active{
     filter: grayscale(0);
-    box-shadow: 0 0 20px #FFFFFF;
+    box-shadow: 0 0 20px #365163;
 }
