@@ -19,6 +19,8 @@ function changePic(target){
      if(currentIndex < 0){
          currentIndex = src.length - 1;
      }
+   } else {
+         currentIndex = target;
    }
 
     // aggiungo una nuova classe active
@@ -62,8 +64,13 @@ const tumbGallery = document.getElementById('thumb')
 let banner = '';
 let thumbElement = '';
 for(let i = 0; i < data.length; i++){
-    banner += `<img src="${data[i].image}" alt="${data[i].title}">
-               <h2>${data[i].title}</h2>`;
+    banner += `<figure>
+                <img src="${data[i].image}" alt="${data[i].title}">
+                <figcaption>
+                  <h3>${data[i].title}</h3>
+                  <p>${data[i].text}</p>
+                </figcaption>
+               </figure>`;
 }
 
 for(let i = 0; i < data.length; i++) {
@@ -73,7 +80,7 @@ for(let i = 0; i < data.length; i++) {
 gallery.innerHTML = banner;
 tumbGallery.innerHTML = thumbElement;
 
-const src = document.querySelectorAll('.gallery img');
+const src = document.querySelectorAll('.gallery figure');
 const thumbSrc = document.querySelectorAll('#thumb img');
 
 
@@ -94,3 +101,10 @@ prev.addEventListener('click', function(){
      // richiamo la funzione 
    changePic('prev');
 });
+
+for (let i = 0; i < thumbSrc.length; i++) {
+  const indexThumb = thumbSrc[i];
+  indexThumb.addEventListener('click', function (){
+    changePic(i)
+  });
+}
