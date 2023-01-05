@@ -89,22 +89,30 @@ let currentIndex = 0;
 src[currentIndex].classList.add('active');
 thumbSrc[currentIndex].classList.add('active');
 
+// ! avvio pagina
+const autoplay = setInterval(() => {
+  changePic('next')
+}, 3000);
+
 // ! funzionamento scorri foto
 // aggiungo l'evento al bottone next
 next.addEventListener('click', function(){
    // richiamo la funzione 
    changePic('next');
+   clearInterval(autoplay);
 });
 
 // aggiungo l'evento al bottone prev
 prev.addEventListener('click', function(){
      // richiamo la funzione 
    changePic('prev');
+   clearInterval(autoplay);
 });
 
 for (let i = 0; i < thumbSrc.length; i++) {
   const indexThumb = thumbSrc[i];
   indexThumb.addEventListener('click', function (){
     changePic(i)
-  });
+   clearInterval(autoplay);
+});
 }
